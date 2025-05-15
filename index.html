@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Favorites</title>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>GitHub Favorites</h1>
+      <div class="search">
+        <label for="input-search">Usuário do GitHub</label>
+        <input type="text" id="input-search" placeholder="Usuário do GitHub" />
+        <button>&plus;</button>
+      </div>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Repositórios</th>
+          <th>Seguidores</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="user">
+            <img src="https://github.com/crisfeitosa.png" alt="Image de crisfeitosa" />
+            <a href="https://github.com/crisfeitosa" target="_blank">
+              <p>Cristiano Feitosa</p>
+              <span>cristiano</span>
+            </a>
+          </td>
+          <td class="repositories">
+            12
+          </td>
+          <td class="followers">
+            343
+          </td>
+          <td>
+            <button>&times;</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
