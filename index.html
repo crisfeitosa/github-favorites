@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitHub Favorites</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <div id="app">
     <header>
       <h1>GitHub Favorites</h1>
       <div class="search">
-        <label for="input-search">Usuário do GitHub</label>
+        <label class="sr-only" for="input-search">Usuário do Github</label>
         <input type="text" id="input-search" placeholder="Usuário do GitHub" />
         <button>&plus;</button>
       </div>
