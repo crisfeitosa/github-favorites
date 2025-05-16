@@ -13,6 +13,8 @@ export class GithubUser {
   }
 }
 
+// classe que vai conter a lógica dos dados
+// como os dados serão estruturados
 export class Favorites {
   constructor(root) {
     this.root = document.querySelector(root);
@@ -24,6 +26,10 @@ export class Favorites {
   load() {
     this.entries = JSON.parse(localStorage.getItem('@github-favorites:')) || [];
   };
+
+  async add(username) {
+    const user = await GithubUser.search(username);
+  }
   
   delete(user) {
     const filteredEntries = this.entries.filter(entry => entry.login !== user.login);
@@ -33,6 +39,7 @@ export class Favorites {
   }
 }
 
+// classe que vai criar a visualização e eventos do HTML
 export class FavoritesView extends Favorites {
   constructor(root) {
     super(root);
@@ -40,7 +47,18 @@ export class FavoritesView extends Favorites {
     this.tbody = this.root.querySelector('table tbody');
 
     this.update();
-  }
+    this.onadd();
+  };
+
+  onadd() {
+    const addButton = this.root.querySelector('.search button');
+
+    addButton.onclick = () => {
+      const { value } = this.root.querySelector('.search input');
+
+      this.add(value);
+    }
+  };
 
   update() {
     this.removeAllTr();
